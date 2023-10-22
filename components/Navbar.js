@@ -34,14 +34,17 @@ export default function App() {
       <NavbarContent className="sm:hidden pr-3" justify="center">
         <NavbarBrand>
     
-          <Image src="/logo.png" alt = 'logo image' width={100} height={100} />
+        <Image className="bg-white" src="/logo.svg" alt = 'logo image'
+             width={50} height={50} style={{width:50,height:50}}/>
         </NavbarBrand>
       </NavbarContent>
 
       <NavbarContent className="hidden sm:flex gap-4 " justify="center">
         <NavbarBrand>
     
-          <Link className="text-white" href={`/`}><Image className="bg-white" src="/logo.svg" alt = 'logo image' width={50} height={50} /></Link>
+          <Link className="text-white" href={`/`}>
+            <Image className="bg-white" src="/logo.svg" alt = 'logo image'
+             width={50} height={50} style={{width:50,height:50}}/></Link>
         </NavbarBrand>
         <NavbarItem>
           <Link className="text-white mx-3" href="/about">
