@@ -18,14 +18,14 @@ export default function Home() {
       price: "250",
     },
     {
-      title: "Students",
-      img: "/student.jpg",
-      price: "250",
+      title: "Teachers",
+      img: "/teacher.jpg",
+      price: "30",
     },
     {
-      title: "Students",
-      img: "/student.jpg",
-      price: "250",
+      title: "Supporting Staff",
+      img: "/staff.jpg",
+      price: "150",
     },
 
   ];
