@@ -8,16 +8,13 @@ export default function App() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   const menuItems = [
-    "Profile",
-    "Dashboard",
-    "Activity",
-    "Analytics",
-    "System",
-    "Deployments",
-    "My Settings",
-    "Team Settings",
-    "Help & Feedback",
-    "Log Out",
+    "Features",
+    "Services",
+    "Admin",
+    "Teachers",
+    "Students",
+    "Expenses",
+    "About"
   ];
 
   return (
@@ -53,9 +50,34 @@ export default function App() {
         </NavbarItem>
         <NavbarItem isActive>
           <Link className="text-white" href="/" aria-current="page">
-            Customers
+            Services
           </Link>
         </NavbarItem>
+        <NavbarItem>
+          <Link  className="text-white mx-3" href="/about">
+           Admin
+          </Link>
+        </NavbarItem>
+
+        <NavbarItem>
+          <Link  className="text-white mx-3" href="/about">
+           Teachers
+          </Link>
+        </NavbarItem>
+
+
+        <NavbarItem>
+          <Link  className="text-white mx-3" href="/about">
+           Students
+          </Link>
+        </NavbarItem>
+
+        <NavbarItem>
+          <Link  className="text-white mx-3" href="/about">
+           Expenses
+          </Link>
+        </NavbarItem>
+        
         <NavbarItem>
           <Link  className="text-white mx-3" href="/about">
            About
@@ -82,7 +104,7 @@ export default function App() {
               color={
                 index === 2 ? "warning" : index === menuItems.length - 1 ? "danger" : "foreground"
               }
-              href="#"
+              href={`/${item.toLowerCase()}`}
               size="lg"
             >
               {item}
