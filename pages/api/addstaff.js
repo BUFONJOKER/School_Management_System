@@ -1,5 +1,5 @@
 import Staff from "@/models/Staff";
-
+import connectDB from "@/middleware/mongoose";
 
 const handler = async (req, res) => {
     if (req.method === "POST") {
@@ -26,4 +26,4 @@ const handler = async (req, res) => {
     }
 }
 
-export default handler;
+export default connectDB(handler);

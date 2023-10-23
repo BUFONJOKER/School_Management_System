@@ -1,5 +1,5 @@
 import Teacher from "@/models/Teacher";
-
+import connectDB from "@/middleware/mongoose";
 
 
 
@@ -25,5 +25,5 @@ const handler = async (req, res) => {
 };
 
 
-export default handler;
+export default connectDB(handler);
   

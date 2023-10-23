@@ -10,4 +10,6 @@ const StaffSchema = new mongoose.Schema({
     salary:{ type: String, required: true },
 }, { timestamps: true });
 
-module.exports = mongoose.models.Staff || mongoose.model('Staff', StaffSchema);
+mongoose.models = {};
+
+export default mongoose.model("Staff", StaffSchema);
