@@ -1,22 +1,12 @@
 import React from "react";
 import { Navbar, NavbarBrand, NavbarMenuToggle, NavbarMenuItem, NavbarMenu, NavbarContent, NavbarItem, Button } from "@nextui-org/react";
-import { AcmeLogo } from "./AcmeLogo.jsx";
 import Link from "next/link.js";
 import Image from "next/image";
 import { Dropdown, DropdownTrigger, DropdownMenu, DropdownItem } from "@nextui-org/react";
 
-export default function App() {
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+export default function AppNavbar() {
 
-  const menuItems = [
-    "Features",
-    "Services",
-    "Admin",
-    "Teachers",
-    "Students",
-    "Expenses",
-    "About"
-  ];
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   return (
     <Navbar

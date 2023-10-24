@@ -1,13 +1,9 @@
 import Image from 'next/image'
-import Link from 'next/link';
-import { Inter } from 'next/font/google'
 import Head from 'next/head'
 import React from 'react';
 import { Card, CardHeader, CardBody, CardFooter, Divider } from "@nextui-org/react";
 import ExpenseChart from '@/components/ExpenseChart';
 
-
-const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
 
@@ -15,17 +11,17 @@ export default function Home() {
     {
       title: "Students",
       img: "/student.jpg",
-      price: "250",
+      total: "250",
     },
     {
       title: "Teachers",
       img: "/teacher.jpg",
-      price: "30",
+      total: "30",
     },
     {
       title: "Supporting Staff",
       img: "/staff.jpg",
-      price: "150",
+      total: "150",
     },
 
   ];
@@ -146,7 +142,7 @@ export default function Home() {
               </CardBody>
               <CardFooter className="text-small justify-between">
                 <b>{item.title}</b>
-                <p className="text-default-500">{item.price}</p>
+                <p className="text-default-500">{item.total}</p>
               </CardFooter>
             </Card>
           ))}
