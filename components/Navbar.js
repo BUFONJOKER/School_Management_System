@@ -1,8 +1,9 @@
 import React from "react";
-import {Navbar, NavbarBrand, NavbarMenuToggle, NavbarMenuItem, NavbarMenu, NavbarContent, NavbarItem, Button} from "@nextui-org/react";
-import {AcmeLogo} from "./AcmeLogo.jsx";
+import { Navbar, NavbarBrand, NavbarMenuToggle, NavbarMenuItem, NavbarMenu, NavbarContent, NavbarItem, Button } from "@nextui-org/react";
+import { AcmeLogo } from "./AcmeLogo.jsx";
 import Link from "next/link.js";
-import  Image  from "next/image";
+import Image from "next/image";
+import { Dropdown, DropdownTrigger, DropdownMenu, DropdownItem } from "@nextui-org/react";
 
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -30,58 +31,94 @@ export default function App() {
 
       <NavbarContent className="sm:hidden pr-3" justify="center">
         <NavbarBrand>
-    
-        <Image className="bg-white" src="/logo.svg" alt = 'logo image'
-             width={50} height={50} style={{width:50,height:50}}/>
+
+          <Image className="bg-white" src="/logo.svg" alt='logo image'
+            width={50} height={50} style={{ width: 50, height: 50 }} />
         </NavbarBrand>
       </NavbarContent>
 
       <NavbarContent className="hidden sm:flex gap-4 " justify="center">
         <NavbarBrand>
-    
+
           <Link className="text-white" href={`/`}>
-            <Image className="bg-white" src="/logo.svg" alt = 'logo image'
-             width={50} height={50} style={{width:50,height:50}}/></Link>
+            <Image className="bg-white" src="/logo.svg" alt='logo image'
+              width={50} height={50} style={{ width: 50, height: 50 }} /></Link>
         </NavbarBrand>
         <NavbarItem>
-          <Link className="text-white mx-3" href="/about">
+          <Button>
             Features
-          </Link>
+          </Button>
         </NavbarItem>
-        <NavbarItem isActive>
-          <Link className="text-white" href="/" aria-current="page">
+        <NavbarItem >
+          <Button>
             Services
-          </Link>
+          </Button>
         </NavbarItem>
         <NavbarItem>
-          <Link  className="text-white mx-3" href="/about">
-           Admin
-          </Link>
+          <Dropdown>
+            <DropdownTrigger>
+              <Button>
+                Supporting Staff
+              </Button>
+            </DropdownTrigger>
+            <DropdownMenu aria-label="Static Actions">
+              <DropdownItem key="new">View Supporting Staff</DropdownItem>
+              <DropdownItem key="copy">Add Supporting Staff</DropdownItem>
+              <DropdownItem key="edit">Update Supporting Staff</DropdownItem>
+              <DropdownItem key="delete" className="text-danger" color="danger">
+                Delete Supporting Staff
+              </DropdownItem>
+            </DropdownMenu>
+          </Dropdown>
         </NavbarItem>
 
         <NavbarItem>
-          <Link  className="text-white mx-3" href="/about">
-           Teachers
-          </Link>
+          <Dropdown>
+            <DropdownTrigger>
+              <Button>
+                Teachers
+              </Button>
+            </DropdownTrigger>
+            <DropdownMenu aria-label="Static Actions">
+              <DropdownItem key="new">View Teachers</DropdownItem>
+              <DropdownItem key="copy">Add Teachers</DropdownItem>
+              <DropdownItem key="edit">Update Teachers</DropdownItem>
+              <DropdownItem key="delete" className="text-danger" color="danger">
+                Delete Teachers
+              </DropdownItem>
+            </DropdownMenu>
+          </Dropdown>
         </NavbarItem>
 
 
         <NavbarItem>
-          <Link  className="text-white mx-3" href="/about">
-           Students
-          </Link>
+          <Dropdown>
+            <DropdownTrigger>
+              <Button>
+                Students
+              </Button>
+            </DropdownTrigger>
+            <DropdownMenu aria-label="Static Actions">
+              <DropdownItem key="new">View Students</DropdownItem>
+              <DropdownItem key="copy">Add Students</DropdownItem>
+              <DropdownItem key="edit">Update Students</DropdownItem>
+              <DropdownItem key="delete" className="text-danger" color="danger">
+                Delete Students
+              </DropdownItem>
+            </DropdownMenu>
+          </Dropdown>
         </NavbarItem>
 
         <NavbarItem>
-          <Link  className="text-white mx-3" href="/about">
-           Expenses
-          </Link>
+          <Button>
+            Expenses
+          </Button>
         </NavbarItem>
-        
+
         <NavbarItem>
-          <Link  className="text-white mx-3" href="/about">
-           About
-          </Link>
+          <Button>
+            About
+          </Button>
         </NavbarItem>
       </NavbarContent>
 
@@ -97,20 +134,89 @@ export default function App() {
       </NavbarContent>
 
       <NavbarMenu>
-        {menuItems.map((item, index) => (
-          <NavbarMenuItem key={`${item}-${index}`}>
-            <Link
-              className="w-full"
-              color={
-                index === 2 ? "warning" : index === menuItems.length - 1 ? "danger" : "foreground"
-              }
-              href={`/${item.toLowerCase()}`}
-              size="lg"
-            >
-              {item}
-            </Link>
-          </NavbarMenuItem>
-        ))}
+
+        <NavbarMenuItem>
+
+          <Button>
+            Features
+          </Button>
+
+        </NavbarMenuItem>
+
+
+        <NavbarMenuItem >
+          <Button>
+            Services
+          </Button>
+        </NavbarMenuItem>
+
+        <NavbarMenuItem>
+          <Dropdown>
+            <DropdownTrigger>
+              <Button>
+                Supporting Staff
+              </Button>
+            </DropdownTrigger>
+            <DropdownMenu aria-label="Static Actions">
+              <DropdownItem key="new">View Supporting Staff</DropdownItem>
+              <DropdownItem key="copy">Add Supporting Staff</DropdownItem>
+              <DropdownItem key="edit">Update Supporting Staff</DropdownItem>
+              <DropdownItem key="delete" className="text-danger" color="danger">
+                Delete Supporting Staff
+              </DropdownItem>
+            </DropdownMenu>
+          </Dropdown>
+        </NavbarMenuItem>
+
+        <NavbarMenuItem>
+          <Dropdown>
+            <DropdownTrigger>
+              <Button>ive
+                Teachers
+              </Button>
+            </DropdownTrigger>
+            <DropdownMenu aria-label="Static Actions">
+              <DropdownItem key="new">View Teachers</DropdownItem>
+              <DropdownItem key="copy">Add Teachers</DropdownItem>
+              <DropdownItem key="edit">Update Teachers</DropdownItem>
+              <DropdownItem key="delete" className="text-danger" color="danger">
+                Delete Teachers
+              </DropdownItem>
+            </DropdownMenu>
+          </Dropdown>
+        </NavbarMenuItem>
+
+
+        <NavbarMenuItem>
+          <Dropdown>
+            <DropdownTrigger>
+              <Button>
+                Students
+              </Button>
+            </DropdownTrigger>
+            <DropdownMenu aria-label="Static Actions">
+              <DropdownItem key="new">View Students</DropdownItem>
+              <DropdownItem key="copy">Add Students</DropdownItem>
+              <DropdownItem key="edit">Update Students</DropdownItem>
+              <DropdownItem key="delete" className="text-danger" color="danger">
+                Delete Students
+              </DropdownItem>
+            </DropdownMenu>
+          </Dropdown>
+        </NavbarMenuItem>
+
+        <NavbarMenuItem>
+          <Button>
+            Expenses
+          </Button>
+        </NavbarMenuItem>
+
+        <NavbarMenuItem>
+          <Button>
+            About
+          </Button>
+        </NavbarMenuItem>
+
       </NavbarMenu>
     </Navbar>
   );
