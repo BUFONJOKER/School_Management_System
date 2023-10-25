@@ -19,7 +19,7 @@ export default function AppNavbar() {
   return (
     <Navbar
       isBordered
-      isMenuOpen={isMenuOpen}
+      
       onMenuOpenChange={setIsMenuOpen}
       className="bg-black "
     >
@@ -71,21 +71,21 @@ export default function AppNavbar() {
         <NavbarItem>
           <Dropdown>
             <DropdownTrigger>
-              <Button>
+              <Button >
                 Supporting Staff
               </Button>
             </DropdownTrigger>
             <DropdownMenu aria-label="Static Actions">
-              <DropdownItem tex key="new" >
+              <DropdownItem textValue="New" key="new" >
                 <Link href={`/viewstaff`}>View Supporting Staff</Link>
               </DropdownItem>
-              <DropdownItem tex key="copy" >
+              <DropdownItem textValue="Copy" key="copy" >
                 <Link href={`/addstaff`}>Add Supporting Staff</Link>
               </DropdownItem>
-              <DropdownItem tex key="edit" >
+              <DropdownItem textValue="Edit" key="edit" >
                 <Link href={`/updatestaff`}>Update Supporting Staff</Link>
               </DropdownItem>
-              <DropdownItem tex key="delete" className="text-danger" color="danger" >
+              <DropdownItem textValue="Delete" key="delete" className="text-danger" color="danger" >
                 <Link href={`/deletestaff`}>Delete Supporting Staff</Link>
               </DropdownItem>
             </DropdownMenu>
@@ -99,16 +99,16 @@ export default function AppNavbar() {
               </Button>
             </DropdownTrigger>
             <DropdownMenu aria-label="Static Actions">
-              <DropdownItem tex key="new" >
+              <DropdownItem textValue="New" key="new" >
                 <Link href={`/viewteacher`}>View Teachers</Link>
               </DropdownItem>
-              <DropdownItem tex key="copy" >
+              <DropdownItem textValue="Copy" key="copy" >
                 <Link href={`/addteacher`}>Add Teachers</Link>
               </DropdownItem>
-              <DropdownItem tex key="edit" >
+              <DropdownItem textValue="Edit" key="edit" >
                 <Link href={`/updateteacher`}>Update Teacher</Link>
               </DropdownItem>
-              <DropdownItem tex key="delete" className="text-danger" color="danger" >
+              <DropdownItem textValue="Delete" key="delete" className="text-danger" color="danger" >
                 <Link href={`/deleteteacher`}>Delete Teacher</Link>
               </DropdownItem>
             </DropdownMenu>
@@ -122,16 +122,16 @@ export default function AppNavbar() {
               </Button>
             </DropdownTrigger>
             <DropdownMenu aria-label="Static Actions">
-              <DropdownItem tex key="new" >
+              <DropdownItem textValue="New" key="new" >
                 <Link href={`/viewstudent`}>View Student</Link>
               </DropdownItem>
-              <DropdownItem tex key="copy" >
+              <DropdownItem textValue="Copy" key="copy" >
                 <Link href={`/addstudent`}>Add Student</Link>
               </DropdownItem>
-              <DropdownItem tex key="edit" >
+              <DropdownItem textValue="Edit" key="edit" >
                 <Link href={`/updatestudent`}>Update Student</Link>
               </DropdownItem>
-              <DropdownItem tex key="delete" className="text-danger" color="danger" >
+              <DropdownItem textValue="Delete" key="delete" className="text-danger" color="danger" >
                 <Link href={`/deletestudent`}>Delete Student</Link>
               </DropdownItem>
             </DropdownMenu>
@@ -179,10 +179,10 @@ export default function AppNavbar() {
               </Button>
             </DropdownTrigger>
             <DropdownMenu aria-label="Static Actions">
-              <DropdownItem tex key="new" ><Link href={`/viewstaff`}>View Supporting Staff</Link></DropdownItem>
-              <DropdownItem tex key="copy" ><Link href={`/addstaff`}>Add Supporting Staff</Link></DropdownItem>
-              <DropdownItem tex key="edit" ><Link href={`/updatestaff`}>Update Supporting Staff</Link></DropdownItem>
-              <DropdownItem tex key="delete" className="text-danger" color="danger" >
+              <DropdownItem tex textValue="New" key="new" ><Link href={`/viewstaff`}>View Supporting Staff</Link></DropdownItem>
+              <DropdownItem tex textValue="Copy" key="copy" ><Link href={`/addstaff`}>Add Supporting Staff</Link></DropdownItem>
+              <DropdownItem tex textValue="Edit" key="edit" ><Link href={`/updatestaff`}>Update Supporting Staff</Link></DropdownItem>
+              <DropdownItem tex textValue="Delete" key="delete" className="text-danger" color="danger" >
                 <Link href={`/deletestaff`}>Delete Supporting Staff</Link>
               </DropdownItem>
             </DropdownMenu>
@@ -196,10 +196,10 @@ export default function AppNavbar() {
               </Button>
             </DropdownTrigger>
             <DropdownMenu aria-label="Static Actions">
-              <DropdownItem tex key="new" ><Link href={`/viewteacher`}>View Teachers</Link></DropdownItem>
-              <DropdownItem tex key="copy" ><Link href={`/addteacher`}>Add Teacher</Link></DropdownItem>
-              <DropdownItem tex key="edit" ><Link href={`/updateteacher`}>Update Teacher</Link></DropdownItem>
-              <DropdownItem tex key="delete" className="text-danger" color="danger" >
+              <DropdownItem tex textValue="New" key="new" ><Link href={`/viewteacher`}>View Teachers</Link></DropdownItem>
+              <DropdownItem tex textValue="Copy" key="copy" ><Link href={`/addteacher`}>Add Teacher</Link></DropdownItem>
+              <DropdownItem tex textValue="Edit" key="edit" ><Link href={`/updateteacher`}>Update Teacher</Link></DropdownItem>
+              <DropdownItem tex textValue="Delete" key="delete" className="text-danger" color="danger" >
               <Link href={`/deleteteacher`}>Delete Teacher</Link>
               </DropdownItem>
             </DropdownMenu>
@@ -213,10 +213,10 @@ export default function AppNavbar() {
               </Button>
             </DropdownTrigger>
             <DropdownMenu aria-label="Static Actions">
-              <DropdownItem tex key="new" ><Link href={`/viewstudent`}>View Students</Link></DropdownItem>
-              <DropdownItem tex key="copy" ><Link href={`/addstudent`}>Add Students</Link></DropdownItem>
-              <DropdownItem tex key="edit" ><Link href={`/updatestudent`}>Update Students</Link></DropdownItem>
-              <DropdownItem tex key="delete" className="text-danger" color="danger" >
+              <DropdownItem textValue="New" key="new" ><Link href={`/viewstudent`}>View Students</Link></DropdownItem>
+              <DropdownItem textValue="Copy" key="copy" ><Link href={`/addstudent`}>Add Students</Link></DropdownItem>
+              <DropdownItem textValue="Edit" key="edit" ><Link href={`/updatestudent`}>Update Students</Link></DropdownItem>
+              <DropdownItem textValue="Delete" key="delete" className="text-danger" color="danger" >
               <Link href={`/deletestudent`}>Delete Students</Link>
               </DropdownItem>
             </DropdownMenu>
@@ -224,7 +224,7 @@ export default function AppNavbar() {
         </NavbarMenuItem>
         <NavbarMenuItem>
           <Button >
-          <Link href={`/expense`}>Expenses</Link>
+      Expenses
           </Button>
         </NavbarMenuItem>
         <NavbarMenuItem>
@@ -236,3 +236,95 @@ export default function AppNavbar() {
     </Navbar>
   );
 }
+
+
+// import React from "react";
+// import {Navbar,NavbarMenuToggle,NavbarMenu,NavbarMenuItem, NavbarBrand, NavbarContent, NavbarItem, Link, Button} from "@nextui-org/react";
+// import {AcmeLogo} from "./AcmeLogo.jsx";
+
+// export default function App() {
+//   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+
+//   const menuItems = [
+//     "Profile",
+//     "Dashboard",
+//     "Activity",
+//     "Analytics",
+//     "System",
+//     "Deployments",
+//     "My Settings",
+//     "Team Settings",
+//     "Help & Feedback",
+//     "Log Out",
+//   ];
+//   const toggleMenu = () => {
+//         setIsMenuOpen(!isMenuOpen);
+//       };
+    
+//       // Function to close the mobile menu
+//       const closeMenu = () => {
+//         setIsMenuOpen(false);
+//       };
+
+//   return (
+//     <Navbar onMenuOpenChange={setIsMenuOpen}>
+//       <NavbarContent>
+//         <NavbarMenuToggle
+//           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+//           className="sm:hidden"
+//         />
+//         <NavbarBrand>
+//           <AcmeLogo />
+//           <p className="font-bold text-inherit">ACME</p>
+//         </NavbarBrand>
+//       </NavbarContent>
+
+//       <NavbarContent className="hidden sm:flex gap-4" justify="center">
+//         <NavbarItem>
+//           <Link color="foreground" href="#" >
+//             Features
+//           </Link>
+//         </NavbarItem>
+//         <NavbarItem isActive>
+//           <Link href="#" aria-current="page">
+//             Customers
+//           </Link>
+//         </NavbarItem>
+//         <NavbarItem>
+//           <Link color="foreground" href="#">
+//             Integrations
+//           </Link>
+//         </NavbarItem>
+//       </NavbarContent>
+//       <NavbarContent justify="end">
+//         <NavbarItem className="hidden lg:flex">
+//           <Link href="#">Login</Link>
+//         </NavbarItem>
+//         <NavbarItem>
+//           <Button as={Link} color="primary" href="#" variant="flat">
+//             Sign Up
+//           </Button>
+//         </NavbarItem>
+//       </NavbarContent>
+//       <NavbarMenu>
+//         {menuItems.map((item, index) => (
+//           <NavbarMenuItem key={`${item}-${index}`}>
+//             <Button  onClick={closeMenu}>
+//             <Link
+          
+//               color={
+//                 index === 2 ? "primary" : index === menuItems.length - 1 ? "danger" : "foreground"
+//               }
+//               className="w-full"
+//               href="#"
+//               size="lg"
+//             >
+//               {item}
+//             </Link>
+//             </Button>
+//           </NavbarMenuItem>
+//         ))}
+//       </NavbarMenu>
+//     </Navbar>
+//   );
+// }
