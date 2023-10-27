@@ -1,115 +1,62 @@
-import React, { useState } from "react";
-import { Navbar, NavbarBrand, NavbarMenuToggle, NavbarMenuItem, NavbarMenu, NavbarContent, NavbarItem, Button } from "@nextui-org/react";
-import Link from "next/link.js";
-import Image from "next/image";
-import { Dropdown, DropdownTrigger, DropdownMenu, DropdownItem } from "@nextui-org/react";
+import React from "react";
+import { Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, Button, Navbar, NavbarBrand, NavbarMenuToggle, NavbarMenuItem, NavbarMenu, NavbarContent, NavbarItem, } from "@nextui-org/react";
+import { AcmeLogo } from "./AcmeLogo.jsx";
+import Link from "next/link";
 
-export default function AppNavbar() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+export default function App() {
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
-  // Function to close the mobile menu
-  const closeMenu = () => {
-    setIsMenuOpen(false);
-  };
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   return (
     <Navbar
+      className="bg-black text-white"
       isBordered
-      
-      onMenuOpenChange={setIsMenuOpen}
-      className="bg-black "
-    >
+      isMenuOpen={isMenuOpen}
+      onMenuOpenChange={setIsMenuOpen}>
       <NavbarContent className="sm:hidden" justify="start">
-        <NavbarMenuToggle
-        className="text-white"
-          onClick={toggleMenu}
-          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-        />
+        <NavbarMenuToggle aria-label={isMenuOpen ? "Close menu" : "Open menu"} />
       </NavbarContent>
-
       <NavbarContent className="sm:hidden pr-3" justify="center">
         <NavbarBrand>
-          <Image
-            className="bg-white"
-            src="/logo.svg"
-            alt="logo image"
-            width={50}
-            height={50}
-            style={{ width: 50, height: 50 }}
-          />
+          <AcmeLogo />
+          <p className="font-bold text-inherit">ACME</p>
         </NavbarBrand>
       </NavbarContent>
-
-      <NavbarContent className="hidden sm:flex gap-4 overflow-hidden" justify="center">
+      <NavbarContent className="hidden sm:flex gap-4" justify="center">
         <NavbarBrand>
-          <Link href={`/`}>
-            <Image
-              className="bg-white"
-              src="/logo.svg"
-              alt="logo image"
-              width={50}
-              height={50}
-              style={{ width: 50, height: 50 }}
-            />
-          </Link>
+          <AcmeLogo />
+          <p className="font-bold text-inherit">ACME</p>
         </NavbarBrand>
         <NavbarItem>
-          <Button>
+          <Link color="foreground" href="/">
+            Home
+          </Link>
+        </NavbarItem>
+        <NavbarItem isActive>
+          <Link href="#" aria-current="page">
             Features
-          </Button>
+          </Link>
         </NavbarItem>
         <NavbarItem>
-          <Button onClick={toggleMenu}
-          aria-label={isMenuOpen ? "Close menu" : "Open menu"}>
+          <Link color="foreground" href="#">
             Services
-          </Button>
+          </Link>
         </NavbarItem>
-        <NavbarItem>
-          <Dropdown>
+        <NavbarItem >
+          <Dropdown >
             <DropdownTrigger>
-              <Button >
-                Supporting Staff
-              </Button>
-            </DropdownTrigger>
-            <DropdownMenu aria-label="Static Actions">
-              <DropdownItem textValue="New" key="new" >
-                <Link href={`/viewstaff`}>View Supporting Staff</Link>
-              </DropdownItem>
-              <DropdownItem textValue="Copy" key="copy" >
-                <Link href={`/addstaff`}>Add Supporting Staff</Link>
-              </DropdownItem>
-              <DropdownItem textValue="Edit" key="edit" >
-                <Link href={`/updatestaff`}>Update Supporting Staff</Link>
-              </DropdownItem>
-              <DropdownItem textValue="Delete" key="delete" className="text-danger" color="danger" >
-                <Link href={`/deletestaff`}>Delete Supporting Staff</Link>
-              </DropdownItem>
-            </DropdownMenu>
-          </Dropdown>
-        </NavbarItem>
-        <NavbarItem>
-          <Dropdown>
-            <DropdownTrigger>
-              <Button>
+              <Button
+                variant="bordered"
+                className="text-white"              >
                 Teachers
               </Button>
             </DropdownTrigger>
             <DropdownMenu aria-label="Static Actions">
-              <DropdownItem textValue="New" key="new" >
-                <Link href={`/viewteacher`}>View Teachers</Link>
-              </DropdownItem>
-              <DropdownItem textValue="Copy" key="copy" >
-                <Link href={`/addteacher`}>Add Teachers</Link>
-              </DropdownItem>
-              <DropdownItem textValue="Edit" key="edit" >
-                <Link href={`/updateteacher`}>Update Teacher</Link>
-              </DropdownItem>
-              <DropdownItem textValue="Delete" key="delete" className="text-danger" color="danger" >
-                <Link href={`/deleteteacher`}>Delete Teacher</Link>
+              <DropdownItem textValue="links" key="new"><Link href={`/addteacher`}>Add   </Link></DropdownItem>
+              <DropdownItem textValue="links" key="copy"><Link href={`/viewteacher`}>View   </Link></DropdownItem>
+              <DropdownItem textValue="links" key="edit"><Link href={`/updateteacher`}>Update   </Link></DropdownItem>
+              <DropdownItem textValue="links" key="delete" className="text-danger" color="danger">
+                <Link href={`/deleteteacher`}>Delete   </Link>
               </DropdownItem>
             </DropdownMenu>
           </Dropdown>
@@ -117,90 +64,74 @@ export default function AppNavbar() {
         <NavbarItem>
           <Dropdown>
             <DropdownTrigger>
-              <Button>
+              <Button
+                variant="bordered" className="text-white"              >
                 Students
               </Button>
             </DropdownTrigger>
             <DropdownMenu aria-label="Static Actions">
-              <DropdownItem textValue="New" key="new" >
-                <Link href={`/viewstudent`}>View Student</Link>
-              </DropdownItem>
-              <DropdownItem textValue="Copy" key="copy" >
-                <Link href={`/addstudent`}>Add Student</Link>
-              </DropdownItem>
-              <DropdownItem textValue="Edit" key="edit" >
-                <Link href={`/updatestudent`}>Update Student</Link>
-              </DropdownItem>
-              <DropdownItem textValue="Delete" key="delete" className="text-danger" color="danger" >
-                <Link href={`/deletestudent`}>Delete Student</Link>
+              <DropdownItem textValue="links" key="new"><Link href={`/addstudent`}>Add   </Link></DropdownItem>
+              <DropdownItem textValue="links" key="copy"><Link href={`/viewstudent`}>View   </Link></DropdownItem>
+              <DropdownItem textValue="links" key="edit"><Link href={`/updatestudent`}>Update   </Link></DropdownItem>
+              <DropdownItem textValue="links" key="delete" className="text-danger" color="danger">
+                <Link href={`/deletestudent`}>Delete   </Link>
               </DropdownItem>
             </DropdownMenu>
           </Dropdown>
         </NavbarItem>
         <NavbarItem>
-          <Button >
-            Expenses
-          </Button>
-        </NavbarItem>
-        <NavbarItem>
-          <Button >
-            About
-          </Button>
+          <Dropdown>
+            <DropdownTrigger>
+              <Button
+                variant="bordered" className="text-white"             >
+                Supporting Staff
+              </Button>
+            </DropdownTrigger>
+            <DropdownMenu aria-label="Static Actions">
+              <DropdownItem textValue="links" key="new"><Link href={`/addstaff`}>Add   </Link></DropdownItem>
+              <DropdownItem textValue="links" key="copy"><Link href={`/viewstaff`}>View   </Link></DropdownItem>
+              <DropdownItem textValue="links" key="edit"><Link href={`/updatestaff`}>Update   </Link></DropdownItem>
+              <DropdownItem textValue="links" key="delete" className="text-danger" color="danger">
+                <Link href={`/deletestaff`}>Delete   </Link>
+              </DropdownItem>
+            </DropdownMenu>
+          </Dropdown>
         </NavbarItem>
       </NavbarContent>
-
       <NavbarContent justify="end">
         <NavbarItem className="hidden lg:flex">
-          <Link className="text-white" href="/">Login</Link>
+          <Link href="#">Login</Link>
         </NavbarItem>
         <NavbarItem>
-          <Button as={Link} color="warning" href="/" variant="flat" >
+          <Button as={Link} color="warning" href="#" variant="flat">
             Sign Up
           </Button>
         </NavbarItem>
       </NavbarContent>
-
-      <NavbarMenu>
-        <NavbarMenuItem>
-          <Button >
-            Features
-          </Button>
+      <NavbarMenu className="bg-black">
+        <NavbarMenuItem className="mt-2">
+          <Button><Link href={`/`} onClick={() => setIsMenuOpen(false)}>Home</Link></Button>
         </NavbarMenuItem>
-        <NavbarMenuItem>
-          <Button >
-            Services
-          </Button>
+        <NavbarMenuItem className="mt-2">
+          <Button><Link href={`/`} onClick={() => setIsMenuOpen(false)}>Features</Link></Button>
         </NavbarMenuItem>
-        <NavbarMenuItem>
+        <NavbarMenuItem className="mt-2">
+          <Button><Link href={`/`} onClick={() => setIsMenuOpen(false)}>Services</Link></Button>
+        </NavbarMenuItem>
+        <NavbarMenuItem className="mt-2">
           <Dropdown>
             <DropdownTrigger>
-              <Button >
-                Supporting Staff
-              </Button>
-            </DropdownTrigger>
-            <DropdownMenu aria-label="Static Actions">
-              <DropdownItem tex textValue="New" key="new" ><Link href={`/viewstaff`}>View Supporting Staff</Link></DropdownItem>
-              <DropdownItem tex textValue="Copy" key="copy" ><Link href={`/addstaff`}>Add Supporting Staff</Link></DropdownItem>
-              <DropdownItem tex textValue="Edit" key="edit" ><Link href={`/updatestaff`}>Update Supporting Staff</Link></DropdownItem>
-              <DropdownItem tex textValue="Delete" key="delete" className="text-danger" color="danger" >
-                <Link href={`/deletestaff`}>Delete Supporting Staff</Link>
-              </DropdownItem>
-            </DropdownMenu>
-          </Dropdown>
-        </NavbarMenuItem>
-        <NavbarMenuItem>
-          <Dropdown>
-            <DropdownTrigger>
-              <Button>
+              <Button
+                variant="bordered" className="bg-gray-300"              >
                 Teachers
               </Button>
             </DropdownTrigger>
             <DropdownMenu aria-label="Static Actions">
-              <DropdownItem tex textValue="New" key="new" ><Link href={`/viewteacher`}>View Teachers</Link></DropdownItem>
-              <DropdownItem tex textValue="Copy" key="copy" ><Link href={`/addteacher`}>Add Teacher</Link></DropdownItem>
-              <DropdownItem tex textValue="Edit" key="edit" ><Link href={`/updateteacher`}>Update Teacher</Link></DropdownItem>
-              <DropdownItem tex textValue="Delete" key="delete" className="text-danger" color="danger" >
-              <Link href={`/deleteteacher`}>Delete Teacher</Link>
+              <DropdownItem textValue="links" key="new"><Link onClick={() => setIsMenuOpen(false)} href={`/addteacher`}>Add   </Link></DropdownItem>
+              <DropdownItem textValue="links" key="copy"><Link onClick={() => setIsMenuOpen(false)} href={`/viewteacher`}>View   </Link></DropdownItem>
+              <DropdownItem textValue="links" key="edit"><Link onClick={() => setIsMenuOpen(false)} href={`/updateteacher`}>Update   </Link></DropdownItem>
+              <DropdownItem textValue="links" key="delete" className="text-danger" color="danger">
+                <Link onClick={() => setIsMenuOpen(false)} href={`/deleteteacher`}>Delete   </Link>
               </DropdownItem>
             </DropdownMenu>
           </Dropdown>
@@ -208,123 +139,43 @@ export default function AppNavbar() {
         <NavbarMenuItem>
           <Dropdown>
             <DropdownTrigger>
-              <Button>
+              <Button
+                variant="bordered" className="bg-gray-300"              >
                 Students
               </Button>
             </DropdownTrigger>
             <DropdownMenu aria-label="Static Actions">
-              <DropdownItem textValue="New" key="new" ><Link href={`/viewstudent`}>View Students</Link></DropdownItem>
-              <DropdownItem textValue="Copy" key="copy" ><Link href={`/addstudent`}>Add Students</Link></DropdownItem>
-              <DropdownItem textValue="Edit" key="edit" ><Link href={`/updatestudent`}>Update Students</Link></DropdownItem>
-              <DropdownItem textValue="Delete" key="delete" className="text-danger" color="danger" >
-              <Link href={`/deletestudent`}>Delete Students</Link>
+              <DropdownItem textValue="links" key="new"><Link onClick={() => setIsMenuOpen(false)} href={`/addstudent`}>Add   </Link></DropdownItem>
+              <DropdownItem textValue="links" key="copy"><Link onClick={() => setIsMenuOpen(false)} href={`/viewstudent`}>View   </Link></DropdownItem>
+              <DropdownItem textValue="links" key="edit"><Link onClick={() => setIsMenuOpen(false)} href={`/updatestudent`}>Update   </Link></DropdownItem>
+              <DropdownItem textValue="links" key="delete" className="text-danger" color="danger">
+                <Link onClick={() => setIsMenuOpen(false)} href={`/deletestudent`}>Delete   </Link>
               </DropdownItem>
             </DropdownMenu>
           </Dropdown>
         </NavbarMenuItem>
         <NavbarMenuItem>
-          <Button >
-      Expenses
-          </Button>
+          <Dropdown>
+            <DropdownTrigger>
+              <Button
+                variant="bordered" className="bg-gray-300">
+                Supporting Staff
+              </Button>
+            </DropdownTrigger>
+            <DropdownMenu aria-label="Static Actions">
+              <DropdownItem textValue="links" key="new"><Link onClick={() => setIsMenuOpen(false)} href={`/addstaff`}>Add   </Link></DropdownItem>
+              <DropdownItem textValue="links" key="copy"><Link onClick={() => setIsMenuOpen(false)} href={`/viewstaff`}>View   </Link></DropdownItem>
+              <DropdownItem textValue="links" key="edit"><Link onClick={() => setIsMenuOpen(false)} href={`/updatestaff`}>Update   </Link></DropdownItem>
+              <DropdownItem textValue="links" key="delete" className="text-danger" color="danger">
+                <Link onClick={() => setIsMenuOpen(false)} href={`/deletestaff`}>Delete   </Link>
+              </DropdownItem>
+            </DropdownMenu>
+          </Dropdown>
         </NavbarMenuItem>
         <NavbarMenuItem>
-          <Button >
-            About
-          </Button>
+          <Button><Link href="#" onClick={() => setIsMenuOpen(false)}>Login</Link></Button>
         </NavbarMenuItem>
       </NavbarMenu>
     </Navbar>
   );
 }
-
-
-// import React from "react";
-// import {Navbar,NavbarMenuToggle,NavbarMenu,NavbarMenuItem, NavbarBrand, NavbarContent, NavbarItem, Link, Button} from "@nextui-org/react";
-// import {AcmeLogo} from "./AcmeLogo.jsx";
-
-// export default function App() {
-//   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-
-//   const menuItems = [
-//     "Profile",
-//     "Dashboard",
-//     "Activity",
-//     "Analytics",
-//     "System",
-//     "Deployments",
-//     "My Settings",
-//     "Team Settings",
-//     "Help & Feedback",
-//     "Log Out",
-//   ];
-//   const toggleMenu = () => {
-//         setIsMenuOpen(!isMenuOpen);
-//       };
-    
-//       // Function to close the mobile menu
-//       const closeMenu = () => {
-//         setIsMenuOpen(false);
-//       };
-
-//   return (
-//     <Navbar onMenuOpenChange={setIsMenuOpen}>
-//       <NavbarContent>
-//         <NavbarMenuToggle
-//           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-//           className="sm:hidden"
-//         />
-//         <NavbarBrand>
-//           <AcmeLogo />
-//           <p className="font-bold text-inherit">ACME</p>
-//         </NavbarBrand>
-//       </NavbarContent>
-
-//       <NavbarContent className="hidden sm:flex gap-4" justify="center">
-//         <NavbarItem>
-//           <Link color="foreground" href="#" >
-//             Features
-//           </Link>
-//         </NavbarItem>
-//         <NavbarItem isActive>
-//           <Link href="#" aria-current="page">
-//             Customers
-//           </Link>
-//         </NavbarItem>
-//         <NavbarItem>
-//           <Link color="foreground" href="#">
-//             Integrations
-//           </Link>
-//         </NavbarItem>
-//       </NavbarContent>
-//       <NavbarContent justify="end">
-//         <NavbarItem className="hidden lg:flex">
-//           <Link href="#">Login</Link>
-//         </NavbarItem>
-//         <NavbarItem>
-//           <Button as={Link} color="primary" href="#" variant="flat">
-//             Sign Up
-//           </Button>
-//         </NavbarItem>
-//       </NavbarContent>
-//       <NavbarMenu>
-//         {menuItems.map((item, index) => (
-//           <NavbarMenuItem key={`${item}-${index}`}>
-//             <Button  onClick={closeMenu}>
-//             <Link
-          
-//               color={
-//                 index === 2 ? "primary" : index === menuItems.length - 1 ? "danger" : "foreground"
-//               }
-//               className="w-full"
-//               href="#"
-//               size="lg"
-//             >
-//               {item}
-//             </Link>
-//             </Button>
-//           </NavbarMenuItem>
-//         ))}
-//       </NavbarMenu>
-//     </Navbar>
-//   );
-// }

@@ -169,16 +169,16 @@ export default function Home() {
 
         </div>
 
-        <h1 className=' text-5xl text-white m-20 text-center'>Features of School Management System</h1>
+        <h1 className='text-5xl text-white m-20 text-center'>Features of School Management System</h1>
 
-        <div className='mb-30' >
-          <Card className="max-w-[auto] bg-sky-950 text-white text-center text-3xl">
+        <div className='mb-30 m-3' >
+          <Card className="max-w-[auto] bg-sky-950 text-white text-center text-xl">
             <CardHeader className="flex gap-3">
             </CardHeader>
             <Divider />
             <CardBody>
               <div className="mb-6">
-                <h3 className="text-4xl font-semibold mb-2">Student Information Management</h3>
+                <h3 className="text-xl font-semibold mb-2">Student Information Management</h3>
                 <ul>
                   <li>Maintain a database of student records, including personal information, contact details, enrollment history, and demographic data.</li>
                   <li>Track student attendance, behavior, and health records.</li>
@@ -186,7 +186,7 @@ export default function Home() {
               </div>
 
               <div className="mb-6">
-                <h3 className="text-4xl font-semibold mb-2">Academic Management</h3>
+                <h3 className="text-xl font-semibold mb-2">Academic Management</h3>
                 <ul>
                   <li>Create and manage class schedules, subject assignments, and classroom allocations.</li>
                   <li>Maintain academic calendars, including exam schedules and academic events.</li>
@@ -195,7 +195,7 @@ export default function Home() {
               </div>
 
               <div className="mb-6">
-                <h3 className="text-4xl font-semibold mb-2">Teacher and Staff Management</h3>
+                <h3 className="text-xl font-semibold mb-2">Teacher and Staff Management</h3>
                 <ul>
                   <li>Store information about teaching and non-teaching staff members, including qualifications, contact details, and employment history.</li>
                   <li>Assign roles and responsibilities to staff members.</li>
@@ -203,7 +203,7 @@ export default function Home() {
               </div>
 
               <div className="mb-6">
-                <h3 className="text-4xl font-semibold mb-2">Online Learning Integration</h3>
+                <h3 className="text-xl font-semibold mb-2">Online Learning Integration</h3>
                 <ul>
                   <li>Integrate e-learning tools, video conferencing, and digital classrooms.</li>
                   <li>Support remote learning and blended learning environments.</li>
@@ -211,21 +211,21 @@ export default function Home() {
               </div>
 
               <div className="mb-6">
-                <h3 className="text-4xl font-semibold mb-2">Mobile Accessibility</h3>
+                <h3 className="text-xl font-semibold mb-2">Mobile Accessibility</h3>
                 <ul>
                   <li>Provide a mobile app for parents, students, and staff to access information and communicate on the go.</li>
                 </ul>
               </div>
 
               <div className="mb-6">
-                <h3 className="text-4xl font-semibold mb-2">Multi-language Support</h3>
+                <h3 className="text-xl font-semibold mb-2">Multi-language Support</h3>
                 <ul>
                   <li>Offer multi-language support for diverse user groups and international schools.</li>
                 </ul>
               </div>
 
               <div className="mb-6">
-                <h3 className="text-4xl font-semibold mb-2">Customization and Scalability</h3>
+                <h3 className="text-xl font-semibold mb-2">Customization and Scalability</h3>
                 <ul>
                   <li>Customize the system to match the specific needs and branding of the school.</li>
                   <li>Ensure scalability to accommodate the growth of the school.</li>
