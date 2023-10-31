@@ -2,10 +2,11 @@ import React from "react";
 import { Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, Button, Navbar, NavbarBrand, NavbarMenuToggle, NavbarMenuItem, NavbarMenu, NavbarContent, NavbarItem, } from "@nextui-org/react";
 import { AcmeLogo } from "./AcmeLogo.jsx";
 import Link from "next/link";
-
+import { useRouter } from 'next/router';
 export default function App() {
 
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const router = useRouter()
 
   return (
     <Navbar
@@ -38,7 +39,7 @@ export default function App() {
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link color="foreground" href="#">
+          <Link color="foreground" href="http://localhost:3000/viewteacher">
             Services
           </Link>
         </NavbarItem>
@@ -52,11 +53,17 @@ export default function App() {
               </Button>
             </DropdownTrigger>
             <DropdownMenu aria-label="Static Actions">
-              <DropdownItem textValue="links" key="new"><Link href={`/addteacher`}>Add   </Link></DropdownItem>
-              <DropdownItem textValue="links" key="copy"><Link href={`/viewteacher`}>View   </Link></DropdownItem>
-              <DropdownItem textValue="links" key="edit"><Link href={`/updateteacher`}>Update   </Link></DropdownItem>
+              <DropdownItem textValue="links" key="new">
+                <Button onClick={() => { router.push("/addteacher") }} className="bg-grey text-xl">Add</Button>
+              </DropdownItem>
+              <DropdownItem textValue="links" key="copy">
+                <Button onClick={() => { router.push("/viewteacher") }} className="bg-grey text-xl">View</Button>
+              </DropdownItem>
+              <DropdownItem textValue="links" key="edit">
+                <Button onClick={() => { router.push("/updateteacher") }} className="bg-grey text-xl">Update</Button>
+              </DropdownItem>
               <DropdownItem textValue="links" key="delete" className="text-danger" color="danger">
-                <Link href={`/deleteteacher`}>Delete   </Link>
+                <Button onClick={() => { router.push("/deleteteacher") }} className="bg-grey text-xl">Delete</Button>
               </DropdownItem>
             </DropdownMenu>
           </Dropdown>
@@ -70,11 +77,17 @@ export default function App() {
               </Button>
             </DropdownTrigger>
             <DropdownMenu aria-label="Static Actions">
-              <DropdownItem textValue="links" key="new"><Link href={`/addstudent`}>Add   </Link></DropdownItem>
-              <DropdownItem textValue="links" key="copy"><Link href={`/viewstudent`}>View   </Link></DropdownItem>
-              <DropdownItem textValue="links" key="edit"><Link href={`/updatestudent`}>Update   </Link></DropdownItem>
+            <DropdownItem textValue="links" key="new">
+                <Button onClick={() => { router.push("/addstudent") }} className="bg-grey text-xl">Add</Button>
+              </DropdownItem>
+              <DropdownItem textValue="links" key="copy">
+                <Button onClick={() => { router.push("/viewstudent") }} className="bg-grey text-xl">View</Button>
+              </DropdownItem>
+              <DropdownItem textValue="links" key="edit">
+                <Button onClick={() => { router.push("/updatestudent") }} className="bg-grey text-xl">Update</Button>
+              </DropdownItem>
               <DropdownItem textValue="links" key="delete" className="text-danger" color="danger">
-                <Link href={`/deletestudent`}>Delete   </Link>
+                <Button onClick={() => { router.push("/deletestudent") }} className="bg-grey text-xl">Delete</Button>
               </DropdownItem>
             </DropdownMenu>
           </Dropdown>
@@ -88,11 +101,17 @@ export default function App() {
               </Button>
             </DropdownTrigger>
             <DropdownMenu aria-label="Static Actions">
-              <DropdownItem textValue="links" key="new"><Link href={`/addstaff`}>Add   </Link></DropdownItem>
-              <DropdownItem textValue="links" key="copy"><Link href={`/viewstaff`}>View   </Link></DropdownItem>
-              <DropdownItem textValue="links" key="edit"><Link href={`/updatestaff`}>Update   </Link></DropdownItem>
+            <DropdownItem textValue="links" key="new">
+                <Button onClick={() => { router.push("/addstaff") }} className="bg-grey text-xl">Add</Button>
+              </DropdownItem>
+              <DropdownItem textValue="links" key="copy">
+                <Button onClick={() => { router.push("/viewstaff") }} className="bg-grey text-xl">View</Button>
+              </DropdownItem>
+              <DropdownItem textValue="links" key="edit">
+                <Button onClick={() => { router.push("/updatestaff") }} className="bg-grey text-xl">Update</Button>
+              </DropdownItem>
               <DropdownItem textValue="links" key="delete" className="text-danger" color="danger">
-                <Link href={`/deletestaff`}>Delete   </Link>
+                <Button onClick={() => { router.push("/deletestaff") }} className="bg-grey text-xl">Delete</Button>
               </DropdownItem>
             </DropdownMenu>
           </Dropdown>

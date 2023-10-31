@@ -1,11 +1,53 @@
-import React from 'react'
+import React from 'react';
 
-export default function ViewTeacher() {
+import { Table,Button, TableHeader, TableColumn, TableBody, TableRow, TableCell } from "@nextui-org/react";
+import { useRouter } from 'next/router';
+export default function ViewTeacher({ teacher }) {
+    const router = useRouter()
+
+
     return (
-        <div>
-            <h1 className='text-white text-center text-lg mt-24 mb-24'>View Teacher Data</h1>
-            <h1 className='text-white text-center text-lg mt-24 mb-24'>View Teacher Data</h1>   
+        <>
+            <div className='container mb-40 mt-40'>
+                <Table isStriped aria-label="Example static collection table">
+                    <TableHeader>
+                        <TableColumn>NAME</TableColumn>
+                        <TableColumn>ROLE</TableColumn>
+                        <TableColumn>STATUS</TableColumn>
+                        <TableColumn>Details</TableColumn>
+                    </TableHeader>
+                    <TableBody>
+                        {
+                            Object.keys(teacher).map((key, index) => {
+                                return (
+                                    <TableRow key={index}>
+                                        <TableCell>{teacher[key].name}</TableCell>
+                                        <TableCell>{teacher[key].subject}</TableCell>
+                                        <TableCell>{teacher[key].email}</TableCell>
+                                        <TableCell><Button>Details</Button></TableCell>
+                                    </TableRow>
+                                )
+                            })
+                        }
 
-        </div>
+
+                    </TableBody>
+                </Table>
+            </div>
+
+        </>
     )
+}
+
+
+export async function getServerSideProps(context) {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/getteacher`)
+    const data = await res.json()
+    const teacher = data.teacher
+
+
+
+    return {
+        props: { teacher }, // will be passed to the page component as props
+    }
 }
