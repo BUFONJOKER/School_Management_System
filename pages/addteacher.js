@@ -1,11 +1,27 @@
-import React from 'react'
+import React from 'react';
+import { Input, Button } from "@nextui-org/react";
 
 export default function AddTeacher() {
     return (
-        <div>
-            <h1 className='text-white text-center text-lg mt-24 mb-24'>Add Teacher Data</h1>
-            <h1 className='text-white text-center text-lg mt-24 mb-24'>Add Teacher Data</h1>   
+        <>
+            <h1 className='text-white text-center text-4xl mt-10 mb-5'>Add Teachers Data</h1>
+            <div className='container p-5'>
+                <div className="grid grid-cols-2 gap-8">
+                    <Input type="name" label="Name" placeholder='Enter Your Name' />
+                    <Input type="email" label="Email" placeholder="Enter your email" />
+                    <Input type='text' label="Phone" placeholder="Enter your phone number" />
+                    <Input type="text" label="Address" placeholder='Enter Your Address' />
+                    <Input type="text" label="Subject" placeholder="Enter your subject" />
+                    <Input type='text' label="Qualification" placeholder="Enter your Qualification" />
+                    <Input type='text' label="Experience" placeholder="Enter your experience" />
+                    <Input type='number' label="Salary" placeholder="Enter your phone number" />
 
-        </div>
+
+                </div>
+                <Button className='text-xl mt-5'>Submit</Button>
+
+            </div>
+        </>
+
     )
 }
