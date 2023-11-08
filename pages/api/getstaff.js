@@ -5,7 +5,7 @@ const handler = async (req, res) => {
     if (req.method === "GET") {
         try {
             const staff = await Staff.find({});
-            res.status(200).json({ success: true, data: staff });
+            res.status(200).json({ staff });
         } catch (error) {
             console.log(error);
             res.status(400).json({ success: false,error:error });

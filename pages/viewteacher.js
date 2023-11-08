@@ -8,7 +8,9 @@ export default function ViewTeacher({ teacher }) {
 
     return (
         <>
-            <div className='container mb-40 mt-40'>
+        <h1 className='text-white text-center mt-10 mb-10 p-5 text-6xl'>Teachers Data</h1>
+            <div className='container p-5'>
+                
                 <Table isStriped aria-label="Example static collection table">
                     <TableHeader>
                         <TableColumn>NAME</TableColumn>
